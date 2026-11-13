@@ -1,200 +1,821 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hemat Energi</title>
-<link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voltia • Panduan & Data Hemat Energi</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <header> 
-    <div class="navbar">
-      <div class="logo">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 21h6M12 3a6 6 0 00-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0012 3z"
-            stroke="#fbc02d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Voltia
+  <!-- Retro System Menubar -->
+  <header class="system-menubar">
+    <div class="menubar-inner">
+      <div class="brand-section">
+        <div class="mac-icon" id="logoIcon" title="Voltia OS System 1984/2026">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="26" height="24" rx="2" stroke="#15370D" stroke-width="2" fill="#FFF2B4"/>
+            <rect x="6" y="6" width="20" height="13" stroke="#15370D" stroke-width="1.5" fill="#ffffff"/>
+            <circle cx="11" cy="11.5" r="1.5" fill="#15370D"/>
+            <circle cx="21" cy="11.5" r="1.5" fill="#15370D"/>
+            <path d="M12 15 Q16 18 20 15" stroke="#15370D" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <line x1="7" y1="23" x2="16" y2="23" stroke="#15370D" stroke-width="2" stroke-linecap="round"/>
+            <rect x="19" y="22" width="6" height="2" fill="#15370D"/>
+          </svg>
+        </div>
+        <div class="brand-title">
+          <span>Voltia</span>
+          <span class="brand-tag">HEMAT ENERGI</span>
+        </div>
       </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Buka menu">
-        <span></span><span></span><span></span>
-      </button>
+      <nav class="menubar-nav" id="menubarNav">
+        <a href="#home" class="nav-link active" data-page="home">Beranda</a>
+        <a href="#data" class="nav-link" data-page="data">Data & Fakta</a>
+        <a href="#aksi" class="nav-link" data-page="aksi">Aksi & Rekomendasi</a>
+        <a href="#tim" class="nav-link" data-page="tim">Tim Pengembang</a>
+      </nav>
 
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-        <li><a href="#" class="nav-link" data-page="data">Data & Fakta</a></li>
-        <li><a href="#" class="nav-link" data-page="aksi">Aksi</a></li>
-      </ul>
+      <div class="menubar-actions">
+        <div class="sys-status-badge">
+          <span class="sys-status-dot"></span>
+          <span>636 SISWA (99.4%)</span>
+        </div>
+        <button class="sys-hamburger" id="hamburgerBtn" aria-label="Buka Menu Navigasi">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
+    <!-- ========================================================
+         PAGE 1: BERANDA (HOME)
+         Berisi Hero, Quick Links, Sorotan, dan Bagian Tentang Kami
+         ======================================================== -->
     <section id="home" class="page active">
-      <div class="hero">
-        <div class="hero-bulat b1"></div>
-        <div class="hero-bulat b2"></div>
-        <div class="hero-inner">
-          <div class="hero-teks">
-            <span class="label">Kampanye Hemat Energi</span>
-            <h1>Voltia</h1>
-            <p class="tagline">"Hemat Sekarang, Bumi Sehat Selamanya"</p>
-            <p class="deskripsi">
-              Satu klik saklar bisa jadi awal perubahan besar. Voltia mengajak
-              seluruh warga untuk lebih sadar energi. Mematikan yang
-              tak perlu, dan menjaga bumi mulai dari hal paling sederhana.
-            </p>
-            <div class="btn-group">
-              <a href="#" class="btn btn-utama nav-link" data-page="data">Lihat Data & Fakta</a>
-              <a href="#" class="btn btn-garis nav-link" data-page="aksi">Yuk, Beraksi!</a>
+      
+      <!-- Hero Section -->
+      <div class="hero-retro">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <div class="hero-meta-strip">
+                <span class="meta-pill dark">HEMAT LISTRIK SEKOLAH</span>
+                <span class="meta-pill highlight">636 SISWA KELAS XI</span>
+                <span class="meta-pill green">99.4% IKUT SURVEI</span>
+              </div>
+              <h1 class="hero-big-title">Halo.<br>Kami Voltia.</h1>
+              <p class="hero-subtitle">
+                Website panduan dan hasil survei kebiasaan hemat energi siswa kelas XI SMK Wikrama Bogor. 
+                Disusun dari data nyata agar kita tahu kebiasaan mana yang sudah hebat dan langkah mudah apa yang bisa kita biasakan bersama di kelas, lab komputer, dan rumah.
+              </p>
+              <div class="btn-group-retro">
+                <a href="#data" class="btn-retro btn-primary nav-link" data-page="data">
+                  <span>Lihat Hasil Survei</span>
+                  <span>↗</span>
+                </a>
+                <a href="#aksi" class="btn-retro btn-gold nav-link" data-page="aksi">
+                  <span>Ikuti Aksi Nyata</span>
+                  <span>↓</span>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div class="hero-gambar">
-            <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="230" cy="55" r="34" fill="#fbc02d"/>
-              <g stroke="#fbc02d" stroke-width="5" stroke-linecap="round">
-                <line x1="230" y1="0" x2="230" y2="14"/>
-                <line x1="230" y1="96" x2="230" y2="110"/>
-                <line x1="175" y1="55" x2="189" y2="55"/>
-                <line x1="271" y1="55" x2="285" y2="55"/>
-                <line x1="191" y1="16" x2="200" y2="25"/>
-                <line x1="260" y1="85" x2="269" y2="94"/>
-                <line x1="269" y1="16" x2="260" y2="25"/>
-                <line x1="200" y1="85" x2="191" y2="94"/>
-              </g>
-              <path d="M150 60c-30 0-52 24-52 52 0 20 11 32 20 40 7 6 9 11 9 19h46
-                       c0-8 2-13 9-19 9-8 20-20 20-40 0-28-22-52-52-52z"
-                    fill="#fff9e0" stroke="#ffffff" stroke-width="4"/>
-              <rect x="127" y="176" width="46" height="10" rx="3" fill="#66bb6a"/>
-              <rect x="132" y="190" width="36" height="8" rx="3" fill="#1b5e20"/>
-              <path d="M150 82v38M136 96l14-14 14 14" stroke="#fbc02d" stroke-width="5"
-                    stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <path d="M40 230c40-70 110-70 150-40" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
-              <path d="M55 205c8-14 26-20 34-10-4 14-24 20-34 10z" fill="#66bb6a"/>
-              <path d="M85 245c8-14 26-20 34-10-4 14-24 20-34 10z" fill="#fbc02d"/>
-            </svg>
+            <div class="hero-illustration-wrapper">
+              <!-- Retro Mac Illustration with palette colors -->
+              <svg class="hero-mac-art" viewBox="0 0 380 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Desk Base -->
+                <rect x="40" y="295" width="300" height="14" fill="#15370D" rx="2"/>
+                <rect x="70" y="309" width="240" height="6" fill="#728E6D" rx="1"/>
+
+                <!-- Macintosh Casing -->
+                <rect x="130" y="45" width="190" height="235" rx="14" fill="#FFF2B4" stroke="#15370D" stroke-width="4"/>
+                <rect x="135" y="270" width="180" height="10" fill="#E5CD82"/>
+
+                <!-- CRT Screen -->
+                <rect x="155" y="70" width="140" height="125" rx="10" fill="#ffffff" stroke="#15370D" stroke-width="3"/>
+                <rect x="162" y="76" width="126" height="113" rx="8" fill="#FFF2B4" stroke="#15370D" stroke-width="1.5"/>
+
+                <!-- Smiling Screen Face -->
+                <circle cx="195" cy="120" r="8" fill="#15370D"/>
+                <circle cx="255" cy="120" r="8" fill="#15370D"/>
+                <circle cx="198" cy="117" r="2.5" fill="#FFF2B4"/>
+                <circle cx="258" cy="117" r="2.5" fill="#FFF2B4"/>
+                <path d="M195 145 C 210 172, 240 172, 255 145" stroke="#15370D" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+                <!-- Floppy Disk Slot -->
+                <rect x="160" y="235" width="105" height="7" rx="3.5" fill="#15370D"/>
+                <circle cx="285" cy="238.5" r="4.5" fill="#E5CD82" stroke="#15370D" stroke-width="1.5"/>
+
+                <!-- Energy Badge -->
+                <rect x="158" y="210" width="12" height="14" rx="2" fill="#728E6D" stroke="#15370D" stroke-width="1"/>
+                <path d="M164 212 L 161 218 L 165 218 L 163 223" stroke="#FFF2B4" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+                <!-- Lightbulb Stylus Tool -->
+                <g id="retroLightbulbTool">
+                  <path d="M75 145 C 55 125, 55 90, 80 70 C 105 50, 140 70, 130 105 C 125 125, 105 135, 105 150 L 75 150 Z" 
+                        fill="#FFF2B4" stroke="#15370D" stroke-width="3.5"/>
+                  <path d="M85 105 Q 92 85 96 100 Q 100 85 107 105" stroke="#E5CD82" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <path d="M85 105 Q 92 85 96 100 Q 100 85 107 105" stroke="#15370D" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  <rect x="77" y="150" width="26" height="6" fill="#E5CD82" stroke="#15370D" stroke-width="2.5"/>
+                  <rect x="80" y="156" width="20" height="5" fill="#728E6D" stroke="#15370D" stroke-width="2.5"/>
+                  <rect x="83" y="161" width="14" height="4" fill="#15370D"/>
+                  <path d="M85 165 L 75 250 L 105 250 L 95 165 Z" fill="#ffffff" stroke="#15370D" stroke-width="3.5"/>
+                  <rect x="73" y="248" width="34" height="10" rx="2" fill="#15370D"/>
+                  <line x1="90" y1="180" x2="90" y2="235" stroke="#15370D" stroke-width="2.5"/>
+                </g>
+
+                <!-- Sparkles -->
+                <g stroke="#15370D" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="88" y1="35" x2="88" y2="48"/>
+                  <line x1="40" y1="80" x2="52" y2="85"/>
+                  <line x1="32" y1="125" x2="45" y2="125"/>
+                  <line x1="45" y1="170" x2="56" y2="164"/>
+                </g>
+                <polygon points="340,35 344,45 354,48 344,52 340,62 336,52 326,48 336,45" fill="#E5CD82" stroke="#15370D" stroke-width="2"/>
+                <polygon points="120,20 123,28 131,30 123,33 120,40 117,33 109,30 117,28" fill="#E5CD82" stroke="#15370D" stroke-width="1.5"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
 
-      <section class="wrap">
-        <div class="judul-bagian">
-          <span class="mini-label">Latar Belakang</span>
-          <h2>Kenapa Kampanye Ini Penting?</h2>
-          <p>Pemborosan energi sering terjadi tanpa disadari. Padahal dampaknya nyata bagi lingkungan dan masa depan kita.</p>
+      <!-- Quick Links Section -->
+      <div class="quick-links-section">
+        <div class="container">
+          <h2 class="quick-links-header">Menu Cepat</h2>
+          <div class="quick-links-grid">
+            <a href="#tentang-kami" class="quick-link-item nav-link" data-page="home" data-scroll="tentang-kami">
+              <span>01. Tentang Kami</span>
+              <span class="arrow">↓</span>
+            </a>
+            <a href="#data" class="quick-link-item nav-link" data-page="data">
+              <span>02. Hasil Survei & Data</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a href="#aksi" class="quick-link-item nav-link" data-page="aksi">
+              <span>03. 5 Cara Nyata Hemat Listrik</span>
+              <span class="arrow">↗</span>
+            </a>
+            <a href="#tim" class="quick-link-item nav-link" data-page="tim">
+              <span>04. Tim Pengembang</span>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
         </div>
+      </div>
 
-        <div class="kartu-grid">
-          <div class="kartu">
-            <div class="ikon-lingkar">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 2L3 14h8l-1 8 11-14h-8l1-6z" fill="#fbc02d"/>
-              </svg>
+      <!-- Halftone Section: Sorotan Temuan Singkat -->
+      <div class="stipple-section">
+        <div class="container">
+          <div class="section-headline">
+            <span class="section-label">FAKTA UTAMA</span>
+            <h2 class="section-title">Dua Hal Penting dari Survei Siswa</h2>
+            <p class="section-desc">Apa saja yang sudah sangat bagus dan apa yang masih sering terlupakan?</p>
+          </div>
+
+          <div class="window-cards-grid">
+            <!-- Window Card 1 -->
+            <div class="mac-window elevated">
+              <div class="mac-window-bar">
+                <div class="mac-window-dots">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="mac-window-title">fakta-01-kebiasaan-baik.html</div>
+                <div class="mac-window-controls">[ - ] [ + ]</div>
+              </div>
+              <div class="mac-window-body">
+                <div class="window-card-content">
+                  <div class="window-card-preview">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                      <span class="font-mono" style="font-weight:800;">NILAI RATA-RATA: 3.36 DARI 4.00</span>
+                      <span class="meta-pill green">96.2% SUDAH BAIK</span>
+                    </div>
+                  </div>
+                  <h3>96% Siswa Sudah Punya Kesadaran yang Baik</h3>
+                  <p>
+                    Sebagian besar siswa kelas XI (378 Sangat Baik dan 234 Baik) sudah paham bahwa mematikan listrik itu penting. 
+                    Kebiasaan yang paling rajin dilakukan adalah <strong>mencabut colokan charger</strong> (nilai 3.45) dan <strong>mematikan saklar listrik saat ruangan kosong</strong> (nilai 3.51).
+                  </p>
+                  <div>
+                    <a href="#data" class="btn-retro btn-sm nav-link" data-page="data">Lihat Grafik Lengkap ↗</a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3>Energi Sering Terbuang</h3>
-            <p>Lampu dan alat elektronik yang menyala saat tidak digunakan adalah pemborosan yang sering terjadi tanpa disadari.</p>
-          </div>
 
-          <div class="kartu">
-            <div class="ikon-lingkar">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C7 2 4 6 4 10c0 4 3 6 3 9h10c0-3 3-5 3-9 0-4-3-8-8-8z" stroke="#2e7d32" stroke-width="1.8"/>
-                <line x1="9" y1="22" x2="15" y2="22" stroke="#2e7d32" stroke-width="1.8"/>
-              </svg>
+            <!-- Window Card 2 -->
+            <div class="mac-window elevated">
+              <div class="mac-window-bar">
+                <div class="mac-window-dots">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="mac-window-title">fakta-02-hal-yang-perlu-diperbaiki.html</div>
+                <div class="mac-window-controls">[ - ] [ + ]</div>
+              </div>
+              <div class="mac-window-body">
+                <div class="window-card-content">
+                  <div class="window-card-preview">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                      <span class="font-mono" style="font-weight:800;">PERLU KITA TINGKATKAN</span>
+                      <span class="meta-pill highlight">NILAI TERENDAH: 3.22</span>
+                    </div>
+                  </div>
+                  <h3>Tantangan: Layar Komputer Lab & Rasa Canggung Menegur</h3>
+                  <p>
+                    Dua hal yang nilainya paling rendah adalah membiarkan layar laptop/komputer menyala terus saat tidak dipakai (nilai 3.22), serta rasa segan atau canggung mengingatkan teman sekelas yang lupa mematikan kipas atau lampu (nilai 3.22).
+                  </p>
+                  <div>
+                    <a href="#aksi" class="btn-retro btn-sm nav-link" data-page="aksi">Pelajari Solusi Mudahnya ↗</a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3>Dampak bagi Bumi</h3>
-            <p>Sebagian besar listrik masih berasal dari sumber energi tak terbarukan, sehingga pemborosan berarti jejak karbon lebih besar.</p>
           </div>
+        </div>
+      </div>
 
-          <div class="kartu">
-            <div class="ikon-lingkar">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="9" stroke="#2e7d32" stroke-width="1.8"/>
-                <path d="M8 12l2.5 2.5L16 9" stroke="#2e7d32" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+      <!-- BAGIAN TENTANG KAMI (KEMBALI KE BERANDA SESUAI PERMINTAAN) -->
+      <div style="background-color: #ffffff; padding: 60px 0; border-bottom: var(--border-thick);" id="tentang-kami">
+        <div class="container">
+          
+          <div class="mac-window">
+            <div class="mac-window-bar">
+              <div class="mac-window-dots">
+                <span class="dot-fill"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mac-window-title">tentang-kami-cerita-voltia.txt</div>
+              <div class="mac-window-controls">[ MENGENAL KAMI ]</div>
             </div>
-            <h3>Kebiasaan Kecil, Efek Besar</h3>
-            <p>Kalau setiap siswa mematikan satu lampu atau kipas yang tak perlu, hasilnya besar jika dilakukan bersama.</p>
+            <div class="mac-window-body">
+              <div class="section-headline">
+                <span class="section-label">TENTANG KAMI</span>
+                <h2 class="section-title">Kenapa Voltia Dibuat?</h2>
+                <p class="section-desc">
+                  Berawal dari pengamatan sederhana di sekolah kami hingga menjadi gerakan bersama untuk menjaga bumi.
+                </p>
+              </div>
+
+              <!-- Latar Belakang Cerita -->
+              <div style="background: var(--c-cream); border: var(--border-thin); padding: 24px; box-shadow: var(--shadow-box-sm); margin-bottom: 28px;">
+                <p style="margin-bottom: 12px; font-size: 1.02rem; line-height: 1.7; color: var(--c-forest);">
+                  Kampanye ini berawal dari hal-hal kecil yang setiap hari kami lihat di sekolah: lampu kelas dan kipas angin yang tetap menyala saat ruangan kosong, layar komputer laboratorium yang dibiarkan menyala saat jam istirahat, dan colokan charger laptop yang tetap tertancap di stopkontak padahal sudah tidak digunakan.
+                </p>
+                <p style="font-size: 1.02rem; line-height: 1.7; color: var(--c-forest);">
+                  Dari situ kami berpikir: <em>"Berapa banyak listrik yang terbuang sia-sia setiap hari kalau hal ini dibiarkan?"</em> Karena itulah Voltia hadir. Voltia dibuat sebagai wadah berbagi data nyata dan panduan praktis agar seluruh siswa dan warga sekolah bisa lebih peduli terhadap penggunaan listrik sehari-hari.
+                </p>
+              </div>
+
+              <!-- 4 Tujuan Utama Voltia -->
+              <h3 style="margin-bottom: 16px; font-size: 1.35rem; color: var(--c-forest);">Apa Tujuan Kami?</h3>
+              <div class="window-cards-grid" style="margin-bottom: 20px;">
+                <div class="mac-window" style="margin-bottom: 0;">
+                  <div class="mac-window-bar">
+                    <div class="mac-window-dots"><span></span><span></span></div>
+                    <div class="mac-window-title">tujuan-01.sys</div>
+                  </div>
+                  <div class="mac-window-body">
+                    <h4 style="margin-bottom: 6px; color: var(--c-forest);">🌱 Membiasakan Hal Kecil</h4>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Membiasakan diri mematikan saklar lampu, kipas, dan mencabut colokan yang tidak dipakai mulai dari ruang kelas sendiri.</p>
+                  </div>
+                </div>
+
+                <div class="mac-window" style="margin-bottom: 0;">
+                  <div class="mac-window-bar">
+                    <div class="mac-window-dots"><span></span><span></span></div>
+                    <div class="mac-window-title">tujuan-02.sys</div>
+                  </div>
+                  <div class="mac-window-body">
+                    <h4 style="margin-bottom: 6px; color: var(--c-forest);">💡 Menyadari Dampak Listrik</h4>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Mengingatkan bahwa pemborosan listrik berarti menambah beban pembangkit listrik dan mempercepat perubahan iklim bumi.</p>
+                  </div>
+                </div>
+
+                <div class="mac-window" style="margin-bottom: 0;">
+                  <div class="mac-window-bar">
+                    <div class="mac-window-dots"><span></span><span></span></div>
+                    <div class="mac-window-title">tujuan-03.sys</div>
+                  </div>
+                  <div class="mac-window-body">
+                    <h4 style="margin-bottom: 6px; color: var(--c-forest);">📊 Menunjukkan Fakta Nyata</h4>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Menyajikan data survei asli dari 636 teman seangkatan kelas XI agar kita tahu titik kebiasaan mana yang perlu ditingkatkan.</p>
+                  </div>
+                </div>
+
+                <div class="mac-window" style="margin-bottom: 0;">
+                  <div class="mac-window-bar">
+                    <div class="mac-window-dots"><span></span><span></span></div>
+                    <div class="mac-window-title">tujuan-04.sys</div>
+                  </div>
+                  <div class="mac-window-body">
+                    <h4 style="margin-bottom: 6px; color: var(--c-forest);">🤝 Saling Mengingatkan</h4>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Membangun suasana kelas yang nyaman untuk saling mengingatkan tanpa rasa tersinggung, canggung, atau malu.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
-        </div>
-      </section>
 
-      <section class="wrap" style="padding-top:0;">
-        <div class="judul-bagian">
-          <span class="mini-label">Tentang kami: </span>
-          <h2>Kenapa Voltia Dibuat?</h2>
-        </div>
-
-        <div class="cerita-box">
-          <div class="cerita-ikon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 21s-7-4.35-9.5-9C.5 7.5 3 3 7 3c2 0 3.5 1 5 3 1.5-2 3-3 5-3
-                       4 0 6.5 4.5 4.5 9-2.5 4.65-9.5 9-9.5 9z" fill="#66bb6a"/>
-            </svg>
+          <!-- Bottom Journey Banner on Beranda -->
+          <div class="journey-banner">
+            <div class="journey-text">
+              <h3>Ingin Menelaah Data Survei atau Mengenal Tim Kami?</h3>
+              <p>Kamu bisa langsung melihat grafik survei 636 siswa, atau mengenal anggota tim pengembang di halaman khusus.</p>
+            </div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="#tim" class="btn-retro nav-link" data-page="tim">
+                <span>Kenali Tim Pengembang 👥</span>
+              </a>
+              <a href="#data" class="btn-retro btn-primary nav-link" data-page="data">
+                <span>Buka Data & Fakta Survei →</span>
+              </a>
+            </div>
           </div>
-          <div class="cerita-teks">
-            <p>
-              Kampanye ini lahir dari hal sederhana: kami sering melihat lampu kelas
-              menyala saat ruangan kosong, kipas angin berputar tanpa ada yang duduk
-              di bawahnya, dan colokan yang tetap terpasang meski alatnya sudah
-              tidak dipakai. Dari situ kami bertanya, seberapa besar sebenarnya
-              energi yang terbuang setiap hari di sekolah kami?
-            </p>
-            <p>
-              Voltia dibuat sebagai wadah untuk mengajak seluruh warga 
-              untuk lebih sadar terhadap penggunaan energi
-              listrik sehari-hari, sekaligus tempat berbagi data dan rekomendasi
-              hemat energi yang mudah dipraktikkan.
-            </p>
-          </div>
-        </div>
 
-        <ul class="tujuan-list" style="margin-top:30px;">
-          <li><span class="emoji">🌱</span> Menumbuhkan kebiasaan hemat energi di lingkungan sekolah, rumah, masyarakat, dan lainnya yang mulai dari hal-hal kecil.</li>
-          <li><span class="emoji">💡</span> Meningkatkan kesadaran bersama tentang dampak pemborosan energi bagi lingkungan.</li>
-          <li><span class="emoji">📋</span> Mengumpulkan data nyata melalui angket dan observasi mengenai pola penggunaan energi.</li>
-          <li><span class="emoji">🤝</span> Memberikan rekomendasi langkah hemat energi yang praktis dan bisa diterapkan bersama.</li>
-        </ul>
-
-        <div class="identitas-box">
-          <h3>Identitas Pembuat</h3>
-          <p><strong>Kelompok 12 :</strong> M. Fatir Farhatan || M. Sidqi Zaeda Arsy || M. Azka Awwadi</p>
-          <p><strong>Rombel :</strong> PPLG XI-4</p>
-          <p><strong>Mata Pelajaran:</strong> Produktif</p>
         </div>
-      </section>
+      </div>
 
     </section>
 
+
+    <!-- ========================================================
+         PAGE 2: DATA & FAKTA (VERIFIKASI SEMUA DATA BENAR)
+         ======================================================== -->
     <section id="data" class="page">
-      <div class="segera">
-        <div class="segera-kotak">
-          <span class="segera-lencana">Belum Tersedia</span>
-          <h1>Fase 2</h1>
-          <p>Halaman ini akan diisi data angket dan observasi hemat energi.</p>
+      <div class="stipple-section" style="padding-top: 40px;">
+        <div class="container">
+          
+          <!-- Page Header Window -->
+          <div class="mac-window">
+            <div class="mac-window-bar">
+              <div class="mac-window-dots">
+                <span class="dot-fill"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mac-window-title">survei-kebiasaan-energi-siswa.json</div>
+              <div class="mac-window-controls">[ DATA TERVERIFIKASI ]</div>
+            </div>
+            <div class="mac-window-body">
+              <div class="section-headline">
+                <span class="section-label">HASIL SURVEI 636 SISWA</span>
+                <h1 class="section-title">Data & Fakta Kebiasaan Siswa Menghemat Listrik</h1>
+                <p class="section-desc">
+                  Data ini diambil dari 636 responden terverifikasi siswa kelas XI SMK Wikrama Bogor pada tanggal 12 Oktober – 5 November 2026. 
+                  Semua grafik dimuat langsung dari berkas data JSON menggunakan <strong>Chart.js</strong>.
+                </p>
+              </div>
+
+              <!-- KPI Metric Cards (Summary) -->
+              <div class="kpi-row">
+                <div class="kpi-card">
+                  <div class="kpi-top">
+                    <span class="kpi-label">Nilai Rata-Rata Siswa</span>
+                    <span class="kpi-icon">⭐</span>
+                  </div>
+                  <div class="kpi-value" id="kpiRataRata">3.36</div>
+                  <div class="kpi-sub">Dari skala 1.00 – 4.00 (Kategori: <strong>Sangat Baik</strong>)</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-top">
+                    <span class="kpi-label">Siswa yang Mengisi</span>
+                    <span class="kpi-icon">👥</span>
+                  </div>
+                  <div class="kpi-value" id="kpiResponden">636</div>
+                  <div class="kpi-sub">Tingkat pengisian <strong>99.4%</strong> (dari 639 siswa)</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-top">
+                    <span class="kpi-label">Kebiasaan Paling Rajin</span>
+                    <span class="kpi-icon">🏆</span>
+                  </div>
+                  <div class="kpi-value" style="font-size: 1.85rem;" id="kpiTertinggi">P01 (3.51)</div>
+                  <div class="kpi-sub">Aksi Harian (3.51) & Cabut Charger (3.45)</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-top">
+                    <span class="kpi-label">Tingkat Kesadaran</span>
+                    <span class="kpi-icon">📊</span>
+                  </div>
+                  <div class="kpi-value" style="font-size: 1.85rem;" id="kpiKategori">59.4%</div>
+                  <div class="kpi-sub">378 Siswa sudah di tingkat <strong>Sangat Baik</strong></div>
+                </div>
+              </div>
+
+              <!-- Filter Tabs -->
+              <div class="retro-tabs" id="dataTabContainer">
+                <button class="retro-tab-btn active" data-filter="all">Semua Grafik</button>
+                <button class="retro-tab-btn" data-filter="butir">10 Kebiasaan Harian</button>
+                <button class="retro-tab-btn" data-filter="kategori">Kategori Siswa</button>
+                <button class="retro-tab-btn" data-filter="jurusan">Berdasarkan Jurusan</button>
+                <button class="retro-tab-btn" data-filter="belajar">Berdasarkan Cara Belajar</button>
+                <button class="retro-tab-btn" data-filter="tabel">Tabel 18 Kelas Rombel</button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- GRAFIK 1: 10 Kebiasaan Harian (P01 - P10) -->
+          <div class="mac-window data-chart-card" id="cardButir">
+            <div class="mac-window-bar">
+              <div class="mac-window-dots"><span></span><span></span></div>
+              <div class="mac-window-title">grafik-01-kebiasaan-harian-p01-p10.chart</div>
+              <div class="mac-window-controls">[ DIAGRAM BATANG ]</div>
+            </div>
+            <div class="mac-window-body">
+              <h3 style="margin-bottom: 6px;">Tingkat Kebiasaan pada 10 Hal Sehari-hari</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">
+                Makin panjang garis hijau ke kanan, berarti siswa makin rajin dan terbiasa melakukannya.
+              </p>
+
+              <div class="chart-container-box">
+                <canvas id="chartButir"></canvas>
+              </div>
+
+              <!-- Kalimat Singkat Penjelas -->
+              <div class="chart-caption">
+                <span class="caption-tag">FAKTA KUNCI</span>
+                <div>
+                  Teman-teman siswa sudah sangat rajin mencabut kabel charger (3.45) dan menghemat listrik sehari-hari (3.51). 
+                  Namun, masih banyak yang lupa membatasi pemakaian laptop (3.22) dan merasa canggung menegur teman yang boros listrik (3.22).
+                </div>
+              </div>
+
+              <!-- Detail 10 Butir -->
+              <details style="margin-top: 18px; border: var(--border-thin); padding: 12px; background: #ffffff; cursor: pointer;">
+                <summary style="font-weight: 800; font-family: var(--font-mono); font-size: 0.88rem; color: var(--c-forest);">
+                  [ + KLIK UNTUK MELIHAT TABEL LENGKAP 10 PERTANYAAN SURVEI ]
+                </summary>
+                <div class="table-responsive-retro" style="margin-top: 12px;">
+                  <table class="table-retro">
+                    <thead>
+                      <tr>
+                        <th>KODE</th>
+                        <th>KEBIASAAN YANG DITANYAKAN</th>
+                        <th>RATA-RATA</th>
+                        <th>SERING MELAKUKAN</th>
+                        <th>JARANG MELAKUKAN</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tabelButirBody">
+                      <!-- Diisi lewat JavaScript -->
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- GRID 2 GRAFIK: Kategori Siswa & Perbandingan Jurusan -->
+          <div class="window-cards-grid" id="gridKategoriJurusan">
+            
+            <!-- GRAFIK 2: Kategori Siswa -->
+            <div class="mac-window data-chart-card" id="cardKategori">
+              <div class="mac-window-bar">
+                <div class="mac-window-dots"><span></span><span></span></div>
+                <div class="mac-window-title">grafik-02-kelompok-kategori.chart</div>
+                <div class="mac-window-controls">[ DIAGRAM LINGKARAN ]</div>
+              </div>
+              <div class="mac-window-body">
+                <h3 style="margin-bottom: 6px;">Berapa Banyak Siswa yang Sudah Hemat Energi?</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">
+                  Pengelompokan siswa berdasarkan seberapa sering mempraktikkan hemat energi.
+                </p>
+
+                <div class="chart-container-box donut-box">
+                  <canvas id="chartKategori"></canvas>
+                </div>
+
+                <!-- Kalimat Singkat Penjelas -->
+                <div class="chart-caption">
+                  <span class="caption-tag green">KESIMPULAN</span>
+                  <div>
+                    Kabar baik! Lebih dari 96% siswa sudah terbiasa hemat energi (59.4% Sangat Baik dan 36.8% Baik). Hanya sekitar 3.8% siswa yang masih perlu sering diingatkan.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GRAFIK 3: Nilai Tiap Jurusan -->
+            <div class="mac-window data-chart-card" id="cardJurusan">
+              <div class="mac-window-bar">
+                <div class="mac-window-dots"><span></span><span></span></div>
+                <div class="mac-window-title">grafik-03-nilai-per-jurusan.chart</div>
+                <div class="mac-window-controls">[ 7 JURUSAN ]</div>
+              </div>
+              <div class="mac-window-body">
+                <h3 style="margin-bottom: 6px;">Perbandingan Nilai Antar-Jurusan</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">
+                  Melihat rata-rata kebiasaan hemat energi di 7 jurusan kelas XI SMK Wikrama.
+                </p>
+
+                <div class="chart-container-box">
+                  <canvas id="chartJurusan"></canvas>
+                </div>
+
+                <!-- Kalimat Singkat Penjelas -->
+                <div class="chart-caption">
+                  <span class="caption-tag gold">PENJELASAN</span>
+                  <div>
+                    Jurusan Pemasaran (PMN) meraih nilai tertinggi (3.51). Sementara jurusan yang sering menggunakan komputer seperti PPLG dan MPLB (3.24) perlu lebih dibiasakan mematikan layar monitor saat istirahat.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- GRID 2 GRAFIK: Cara Belajar & Sebaran Nilai Siswa -->
+          <div class="window-cards-grid" id="gridBelajarSebaran">
+            
+            <!-- GRAFIK 4: Berdasarkan Cara Belajar -->
+            <div class="mac-window data-chart-card" id="cardBelajar">
+              <div class="mac-window-bar">
+                <div class="mac-window-dots"><span></span><span></span></div>
+                <div class="mac-window-title">grafik-04-cara-belajar.chart</div>
+                <div class="mac-window-controls">[ TIPE BELAJAR ]</div>
+              </div>
+              <div class="mac-window-body">
+                <h3 style="margin-bottom: 6px;">Perbandingan Berdasarkan Cara Belajar Siswa</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">
+                  Siswa yang suka praktik langsung (Kinestetik), mendengarkan (Auditori), dan melihat gambar (Visual).
+                </p>
+
+                <div class="chart-container-box">
+                  <canvas id="chartGayaBelajar"></canvas>
+                </div>
+
+                <!-- Kalimat Singkat Penjelas -->
+                <div class="chart-caption">
+                  <span class="caption-tag">TEMUAN</span>
+                  <div>
+                    Siswa yang suka praktik langsung (3.40) dan mendengarkan (3.39) sedikit lebih rajin mematikan saklar fisik dan merespons imbauan guru dibanding tipe visual (3.32).
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GRAFIK 5: Sebaran Nilai Siswa -->
+            <div class="mac-window data-chart-card" id="cardSebaran">
+              <div class="mac-window-bar">
+                <div class="mac-window-dots"><span></span><span></span></div>
+                <div class="mac-window-title">grafik-05-sebaran-nilai-siswa.chart</div>
+                <div class="mac-window-controls">[ SEBARAN NILAI ]</div>
+              </div>
+              <div class="mac-window-body">
+                <h3 style="margin-bottom: 6px;">Sebaran Nilai Siswa (Skala 10 sampai 40)</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">
+                  Menunjukkan berapa banyak siswa yang mendapat total nilai rendah hingga nilai sempurna 40.
+                </p>
+
+                <div class="chart-container-box">
+                  <canvas id="chartSebaranSkor"></canvas>
+                </div>
+
+                <!-- Kalimat Singkat Penjelas -->
+                <div class="chart-caption">
+                  <span class="caption-tag green">DISTRIBUSI</span>
+                  <div>
+                    Hampir semua siswa mendapat nilai tinggi di atas 30, bahkan ada 86 siswa yang meraih nilai sempurna 40 karena selalu disiplin hemat listrik di sekolah!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- TABEL 18 KELAS ROMBEL -->
+          <div class="mac-window data-chart-card" id="cardTabel">
+            <div class="mac-window-bar">
+              <div class="mac-window-dots"><span></span><span></span></div>
+              <div class="mac-window-title">tabel-18-kelas-rombel.tsv</div>
+              <div class="mac-window-controls">[ PENCARIAN ]</div>
+            </div>
+            <div class="mac-window-body">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+                <div>
+                  <h3 style="margin-bottom: 4px;">Data Rata-Rata 18 Kelas Rombel</h3>
+                  <p style="color: var(--text-muted); font-size: 0.95rem;">Cari nama kelasmu untuk melihat seberapa rajin kelasmu menghemat energi.</p>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center;">
+                  <input type="text" id="filterRombelInput" placeholder="Ketik nama kelas (misal: PPLG)..." class="retro-input" style="padding: 8px 12px; font-size: 0.88rem; width: 220px;">
+                  <a href="./data/data-perilaku-energi.json" download="data-perilaku-energi.json" class="btn-retro btn-sm">
+                    <span>Unduh Data JSON 💾</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive-retro">
+                <table class="table-retro">
+                  <thead>
+                    <tr>
+                      <th>NAMA KELAS</th>
+                      <th>JURUSAN</th>
+                      <th>JUMLAH SISWA</th>
+                      <th>NILAI RATA-RATA</th>
+                      <th>TOTAL NILAI</th>
+                      <th>% SANGAT BAIK</th>
+                      <th>KETERANGAN</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabelRombelBody">
+                    <!-- Diisi lewat JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Journey Banner to Aksi -->
+          <div class="journey-banner">
+            <div class="journey-text">
+              <h3>Setelah Melihat Datanya, Apa yang Bisa Kita Lakukan?</h3>
+              <p>Yuk, pelajari 5 langkah mudah dan nyata untuk menghemat listrik bersama teman sekelas!</p>
+            </div>
+            <a href="#aksi" class="btn-retro btn-primary nav-link" data-page="aksi">
+              <span>Buka Halaman Aksi & Rekomendasi →</span>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
+
+    <!-- ========================================================
+         PAGE 3: AKSI & REKOMENDASI (FASE 3 - KOSONG / BELUM TERSEDIA)
+         ======================================================== -->
     <section id="aksi" class="page">
-      <div class="segera">
-        <div class="segera-kotak">
-          <span class="segera-lencana">Belum Tersedia</span>
-          <h1>Fase 3</h1>
-          <p>Halaman ini akan diisi rekomendasi dan langkah aksi hemat energi.</p>
+      <div class="stipple-section" style="padding-top: 60px; padding-bottom: 80px;">
+        <div class="container" style="max-width: 720px;">
+          
+          <div class="mac-window" style="text-align: center;">
+            <div class="mac-window-bar">
+              <div class="mac-window-dots">
+                <span class="dot-fill"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mac-window-title">fase-03-aksi-dan-rekomendasi.sys</div>
+              <div class="mac-window-controls">[ SEGERA HADIR ]</div>
+            </div>
+            <div class="mac-window-body" style="padding: 50px 30px;">
+              <span class="meta-pill highlight" style="margin-bottom: 16px; font-size: 0.88rem;">Belum Tersedia</span>
+              <h1 style="font-size: 3.2rem; margin: 14px 0 10px; color: var(--c-forest); font-weight: 900;">Fase 3</h1>
+              <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 480px; margin: 0 auto 28px;">
+                Halaman ini akan diisi rekomendasi dan langkah aksi hemat energi.
+              </p>
+              <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                <a href="#home" class="btn-retro btn-gold nav-link" data-page="home">
+                  <span>← Kembali ke Beranda</span>
+                </a>
+                <a href="#data" class="btn-retro btn-primary nav-link" data-page="data">
+                  <span>Lihat Data & Fakta</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+
+    <!-- ========================================================
+         PAGE 4: TIM PENGEMBANG (HALAMAN TERSENDIRI SESUAI PERMINTAAN)
+         ======================================================== -->
+    <section id="tim" class="page">
+      <div class="stipple-section" style="padding-top: 40px;">
+        <div class="container">
+
+          <!-- Page Header Window -->
+          <div class="mac-window">
+            <div class="mac-window-bar">
+              <div class="mac-window-dots">
+                <span class="dot-fill"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mac-window-title">tim-pengembang-kelompok-12.app</div>
+              <div class="mac-window-controls">[ PROFIL TIM ]</div>
+            </div>
+            <div class="mac-window-body">
+              <div class="section-headline">
+                <span class="section-label">TIM PENGEMBANG</span>
+                <h1 class="section-title">Tim Pengembang Voltia</h1>
+                <p class="section-desc">
+                  Siswa Kelas XI Program Keahlian Pengembangan Perangkat Lunak dan Gim (PPLG) SMK Wikrama Bogor.
+                </p>
+              </div>
+
+              <!-- 3 Kartu Anggota Tim (Tanpa Ikon dan Role) -->
+              <div class="team-members-grid" style="margin-bottom: 30px;">
+                
+                <!-- Anggota 1 -->
+                <div class="member-card">
+                  <h3 class="member-name">M. Fatir Farhatan</h3>
+                  <span class="member-rombel-pill">PPLG XI-4</span>
+                </div>
+
+                <!-- Anggota 2 -->
+                <div class="member-card">
+                  <h3 class="member-name">M. Sidqi Zaeda Arsy</h3>
+                  <span class="member-rombel-pill">PPLG XI-4</span>
+                </div>
+
+                <!-- Anggota 3 -->
+                <div class="member-card">
+                  <h3 class="member-name">M. Azka Awwadi</h3>
+                  <span class="member-rombel-pill">PPLG XI-4</span>
+                </div>
+
+              </div>
+
+              <!-- Detail Proyek & Informasi Kelas -->
+              <div class="mac-window" style="margin-bottom: 0;">
+                <div class="mac-window-bar">
+                  <div class="mac-window-dots"><span></span><span></span></div>
+                  <div class="mac-window-title">informasi-sekolah-dan-proyek.dat</div>
+                  <div class="mac-window-controls">[ INFO RESMI ]</div>
+                </div>
+                <div class="mac-window-body">
+                  <div style="background: var(--c-cream); border: var(--border-thin); padding: 22px; box-shadow: var(--shadow-box-sm);">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 1rem;">
+                      <div>
+                        <strong>Kelompok :</strong> Kelompok 12
+                      </div>
+                      <div>
+                        <strong>Rombel :</strong> PPLG XI-4
+                      </div>
+                      <div>
+                        <strong>Mata Pelajaran :</strong> Produktif (PPLG)
+                      </div>
+                      <div>
+                        <strong>Sekolah :</strong> SMK Wikrama Bogor
+                      </div>
+                      <div>
+                        <strong>Tahun :</strong> 2026
+                      </div>
+                      <div>
+                        <strong>Fokus Proyek :</strong> Kampanye & Riset Hemat Energi
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Journey Banner on Tim -->
+              <div class="journey-banner">
+                <div class="journey-text">
+                  <h3>Ingin Melihat Karya Lengkap Kami?</h3>
+                  <p>Pelajari hasil survei 636 siswa atau coba langkah nyata di halaman rekomendasi aksi.</p>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                  <a href="#home" class="btn-retro nav-link" data-page="home">
+                    <span>Ke Beranda ⟲</span>
+                  </a>
+                  <a href="#data" class="btn-retro btn-primary nav-link" data-page="data">
+                    <span>Lihat Data & Fakta →</span>
+                  </a>
+                  <a href="#aksi" class="btn-retro btn-gold nav-link" data-page="aksi">
+                    <span>Aksi & Rekomendasi ⚡</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <div class="footer-logo">Voltia</div>
-    <p> "Hemat Sekarang, Bumi Sehat Selamanya"</p>
+  <!-- Retro System Footer (Hanya: 2026 SMK Wikrama) -->
+  <footer class="retro-footer">
+    <div class="container">
+      <div class="footer-copy">2026 SMK Wikrama</div>
+    </div>
   </footer>
 
-<script src="./js/main.js"></script>
+  <!-- Data Script Fallback -->
+  <script src="./js/data-perilaku-energi.js"></script>
+  <!-- Main Application Logic -->
+  <script src="./js/main.js"></script>
 
 </body>
 </html>
